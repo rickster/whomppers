@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   host: 127.0.0.1
   encoding: utf8
-  database: tower_defense
+  database: whomppers
   username: root
   password:
   #socket: /tmp/mysql.sock
@@ -19,7 +19,7 @@ test:
   adapter: mysql2
   host: 127.0.0.1
   encoding: utf8
-  database: tower_defense
+  database: whomppers
   username: root
   password:
 
@@ -27,6 +27,6 @@ production:
   adapter: mysql2
   host: 127.0.0.1
   encoding: utf8
-  database: tower_defense
+  database: whomppers
   username: root
   password:
