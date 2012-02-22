@@ -29,13 +29,34 @@ GEM
       activesupport (= 3.1.3)
     activesupport (3.1.3)
       multi_json (~> 1.0)
+    addressable (2.2.7)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    bson (1.5.2)
     builder (3.0.0)
+    cookiejar (0.3.0)
+    daemons (1.1.8)
+    em-hiredis (0.1.0)
+      hiredis (~> 0.3.0)
+    em-http-request (0.3.0)
+      addressable (>= 2.0.0)
+      escape_utils
+      eventmachine (>= 0.12.9)
     erubis (2.7.0)
+    escape_utils (0.2.4)
+    eventmachine (0.12.10)
     faker (1.0.1)
       i18n (~> 0.4)
+    faye (0.7.1)
+      cookiejar (>= 0.3.0)
+      em-hiredis (>= 0.0.1)
+      em-http-request (~> 0.3)
+      eventmachine (~> 0.12.0)
+      json (>= 1.0)
+      rack (>= 1.0)
+      thin (~> 1.2)
     hike (1.2.1)
+    hiredis (0.3.2)
     i18n (0.6.0)
     json (1.6.5)
     jwt (0.1.4)
@@ -45,6 +66,12 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
+    mongo (1.5.2)
+      bson (= 1.5.2)
+    mongoid (2.4.4)
+      activemodel (~> 3.1)
+      mongo (~> 1.3)
+      tzinfo (~> 0.3.22)
     multi_json (1.0.4)
     mysql2 (0.3.11)
     paper_trail (2.6.0)
@@ -81,6 +108,10 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -98,7 +129,9 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   faker
+  faye
   json
+  mongoid
   mysql2
   paper_trail
   rails (= 3.1.3)
