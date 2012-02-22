@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BuldingTest < ActiveSupport::TestCase
+class Units::LevelTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
