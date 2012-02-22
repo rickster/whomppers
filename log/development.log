@@ -1,0 +1,19 @@
+  [1m[36m (54.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (206.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateFactions (20120218072159)
+  [1m[35m (94.3ms)[0m  CREATE TABLE `factions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `faction_name` varchar(255) NOT NULL, `faction_description` text NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120218072159')[0m
+Migrating to CreateBuldings (20120218074343)
+  [1m[35m (127.3ms)[0m  CREATE TABLE `buldings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `description` varchar(255) NOT NULL, `type` varchar(255) NOT NULL, `is_attackable` tinyint(1) DEFAULT 0, `faction_id` int(11) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120218074343')[0m
+Migrating to CreateBuildingsLevels (20120218074413)
+  [1m[35m (86.9ms)[0m  CREATE TABLE `buildings_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `level` int(11) NOT NULL, `building_id` int(11) NOT NULL, `level_skin` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120218074413')[0m
+Migrating to CreateBuildingsLevelDefensiveStats (20120218074423)
+  [1m[35m (88.1ms)[0m  CREATE TABLE `buildings_level_defensive_stats` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `armor_points` int(11) NOT NULL, `health_points` int(11) NOT NULL, `armor_type` int(11) NOT NULL, `is_reinforced` tinyint(1) DEFAULT 0, `level_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120218074423')[0m
+Migrating to CreateBuildingsLevelOffensiveStats (20120218074431)
+  [1m[35m (86.2ms)[0m  CREATE TABLE `buildings_level_offensive_stats` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `damage` int(11) NOT NULL, `speed` int(11) NOT NULL, `range` int(11) NOT NULL, `radius` int(11), `status_modifier` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120218074431')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
