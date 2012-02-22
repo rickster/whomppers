@@ -4,6 +4,7 @@ class CreateUnitsLevelBaseUnitStats < ActiveRecord::Migration
       t.decimal :movement_speed, :precision => 15, :scale => 10, :default=>'0.0'
       t.decimal :health_points, :precision => 15, :scale => 10, :default=>'0.0'
       t.decimal :build_time, :precision => 15, :scale => 10, :null=>false
+      t.integer :level_id
       t.timestamps
     end
   end
