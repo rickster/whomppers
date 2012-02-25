@@ -1,5 +1,5 @@
 class Building < ActiveRecord::Base
-  has_many :levels, :class_name=>"Buildings::Levels"
+  has_many :levels, :class_name=>"Buildings::Level"
   belongs_to :faction
 
   def self.subclasses
